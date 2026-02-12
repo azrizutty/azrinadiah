@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.active {
+  display: block;
+}
+
+button, select, input {
+  padding: 14px 28px;
+  font-size: 17px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 8px;
+}
+
+input {
+  text-align: center;
+}
+
+img#her1 {
+  width: 350px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+img#her2, img#finalPic, .extraPic {
+  width: 230px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+.memoryWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.apologyText {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 22px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.termsText {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="song" src="song.mp3" loop></audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+  <h1>Hello my love Naddyss 💗</h1>
+  <img id="her1" src="her1.jpg">
+  <p>THIS IS STRICTLY FOR NADIAH ONLY!!</p>
+  <button onclick="startSong(); next(2);">Next ➡️</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <h2>Enter our official date 💌</h2>
+  <input id="pw" placeholder="DDMMYYYY">
+  <p id="err"></p>
+  <img class="extraPic" src="extra4.jpg" style="width:200px; margin:15px;">
+  <br>
+  <button onclick="check()">Unlock ❤️</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3" style="padding-top:20px;">
+  <h1>YOU ARE MY LOVE BABYY SAYANG MONCET ❤️</h1>
+  <img id="her2" src="her2.jpg" style="margin:10px 0;">
+  <p style="font-size:22px; margin:10px 0;">Will you celebrate Valentine with me?</p>
+  <div style="margin-top:10px;">
+    <button id="yes" onclick="next(4)">Yes 💖</button>
+    <button id="no">No 😳</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+  <h1>Our Activities 💑</h1>
+  <p>Choose one activity (optional):</p>
+  <select id="activity">
+    <option>🏃 Run 14.02 km</option>
+    <option>🍽 Go on a date</option>
+    <option>😆 tanak buatt apa apa</option>
+  </select>
+  <p style="margin-top:15px;">Don't forget to screenshot your answer and send to your lover 💌</p>
+  <button onclick="next(5)">Continue ❤️</button>
+</div>
+
+<!-- PAGE 5 TERMS -->
+<div class="page" id="p5">
+  <h1>Terms & Conditions 💌</h1>
+  <div class="termsText">
+My love, Nadiah sayanggg💖,<br><br>
+Hi sayang,this is my part for you, from the moment we met, I hope and i knew you were the one. I want to make every day special with you, sebab tu saya selalu nak jumpa awak hihi. I always rindu awak sayangg. Getting to know you and being with you makes my life happier and fills my heart in a way I never felt before, sayangg. I wanna say thank you for always being in my heart sayangg. I always love you and I won't give up on you, saya jwanjii babyy,saya akan usaha untuk make it happens one day apa yang kita wish untuk stay forever and kahwin akan jadi sayangg amin.Baby juga kena janji dengan saya untuk tak give up and always with me, we will work together untuk apa yang kita nak okay. Thank you for staying, loving, and choosing me.<br><br>
+Love always,<br>
+Azri Yang Hensem Dan Sado
+  </div>
+  <button onclick="next(6)">I Agree ❤️</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="p6">
+  <h1>I love youu so much babyyy ❤️</h1>
+  <img id="finalPic" src="yourPic.jpg">
+  <button onclick="next(7)">Next ➡️</button>
+</div>
+
+<!-- PAGE 7 FOREVER -->
+<div class="page" id="p7">
+  <h1>Forever & Always 💞</h1>
+  <p>this is ur fav boy,he wont change his love to you my moncet cantik comel sayang saya</p>
+  <img class="extraPic" src="extra3.jpg" style="width:250px; margin:15px;">
+  <button onclick="next(8)">Next ➡️</button>
+</div>
+
+<!-- PAGE 8 APOLOGY -->
+<div class="page" id="p8">
+  <h1>For You 💌</h1>
+  <div class="memoryWrap">
+    <div class="apologyText">
+      SELFIE SATU SEND KAT SAYA FOR VIRTUAL FLOWERS ❤️<br><br>
+   i made this for you untuk happykan awak sayangg moncett
+      <br><br>
+      btw here are our moments together ❤️
+    </div>
+    <img class="extraPic" src="extra1.jpg" style="width:350px;">
+  </div>
+  <button onclick="next(9)">Next ➡️</button>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page" id="p9">
+  <h1>Last here, these are our fav moments 📸</h1>
+  <img class="extraPic" src="extra2.jpg" style="width:350px;">
+  <br>
+  <button onclick="end()">Leave ❤️</button>
+</div>
+
+<script>
+const song = document.getElementById("song");
+function startSong(){ if(song.paused) song.play(); }
+
+function next(n){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById("p"+n).classList.add("active");
+}
+
+function check(){
+  const pw = document.getElementById("pw").value;
+  if(pw==="16012026"){ next(3); startSong(); }
+  else { document.getElementById("err").innerText="Wrong date 😳"; }
+}
+
+const noBtn = document.getElementById("no");
+noBtn.onmouseover = ()=>{
+  noBtn.style.transform=`translate(${Math.random()*300-150}px, ${Math.random()*300-150}px)`;
+};
+
+function end(){ alert("I love you ❤️ Forever."); }
+</script>
+
+</body>
+</html>
